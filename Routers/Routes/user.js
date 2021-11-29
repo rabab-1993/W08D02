@@ -4,7 +4,7 @@ const userRouter = express.Router();
 const {register, logIn} = require('../Controllers/user')
 
 
-userRouter.post("/", register);
+userRouter.post("/register", register);
 userRouter.post("/login", logIn);
 
 

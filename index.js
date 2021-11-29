@@ -5,9 +5,11 @@ dotenv.config();
 const mongoose = require("mongoose");
 const app = express()
 
+// import all routers
 const userRouter = require('./Routers/Routes/user');
-app.use("/register", userRouter)
-
+app.use("/user", userRouter);
+const roleRouter = require('./Routers/Routes/role')
+app.use("/role", roleRouter);
 
 app.use(express.json())
 
