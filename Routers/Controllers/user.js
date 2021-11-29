@@ -11,14 +11,13 @@ const SALT = Number(process.env.SALT);
 
 // Register function
 const register = async (req, res) => {
-const { email, password, role} = req.body;
+const {email, password, role} = req.body;
 const savePass = await bcrypt.hash(password, SALT);
-
-​const creatUser = new userModel({
+const creatUser = new userModel({
         email,
         password: savePass,
         role
-    })
+    });
 
     creatUser
     .save()
